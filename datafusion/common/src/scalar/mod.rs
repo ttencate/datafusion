@@ -1998,7 +1998,7 @@ impl ScalarValue {
             .map(|element: ScalarValue| match element {
                 ScalarValue::Decimal128(v1, _, _) => Ok(v1),
                 s => {
-                    _internal_err!("Expected ScalarValue::Null element. Received {s:?}")
+                    _internal_err!("Expected ScalarValue::Decimal128 element. Received {s:?}")
                 }
             })
             .collect::<Result<Decimal128Array>>()?
